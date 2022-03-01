@@ -9,17 +9,16 @@ let [N, distanceArr, priceArr] = require("fs")
 
 N = Number(N);
 distanceArr = distanceArr.split(" ").map((item) => BigInt(item));
-distanceArr.unshift(BigInt(0));
 priceArr = priceArr.split(" ").map((item) => BigInt(item));
 
 let answer = BigInt(0);
 let price = priceArr[0];
 
-for (let i = 1; i < N; i++) {
-  answer += distanceArr[i] * price;
+for (let i = 0; i < N - 1; i++) {
   if (price > priceArr[i]) {
     price = priceArr[i];
   }
+  answer += distanceArr[i] * price;
 }
 
 console.log(answer.toString());
