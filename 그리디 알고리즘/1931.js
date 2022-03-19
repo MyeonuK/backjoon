@@ -27,8 +27,6 @@ let tempEnd = 0;
 for (let i = 0; i < N; i++) {
   if (I[i][0] >= tempEnd) {
     tempEnd = I[i][1];
-
-    //console.log(`${I[i][0]}    ${I[i][1]}`);
     answer++;
   }
 }
